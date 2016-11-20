@@ -1,4 +1,7 @@
 #!/bin/bash
+
+set -ex
+
 docker pull lsiodev/docker-gc
 
 docker run --rm \
