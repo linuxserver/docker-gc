@@ -2,6 +2,10 @@ FROM scratch
 ADD rootfs.tar.gz /
 MAINTAINER sparklyballs
 
+# environment variables
+ENV FORCE_CONTAINER_REMOVAL=1
+ENV FORCE_IMAGE_REMOVAL=1
+
 # install runtime packages
 RUN \
  apk add --no-cache \
