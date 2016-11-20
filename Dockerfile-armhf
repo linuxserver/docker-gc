@@ -1,5 +1,5 @@
 FROM scratch
-ADD armhf-edge/rootfs.tar.gz /
+ADD rootfs.tar.gz /
 MAINTAINER sparklyballs
 
 # install runtime packages
