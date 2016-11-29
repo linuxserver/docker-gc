@@ -1,3 +1,11 @@
 lsiodev/shellcheck-armhf:latest
 lsiodev/shellcheck:latest
 lsiodev/readme-sync:latest
+lsiobase/alpine:latest
+lsiobase/alpine.armhf:latest
+lsiobase/xenial:latest
+lsiobase/xenial.armhf:latest
+lsiobase/alpine.python:latest
+lsiobase/alpine.python.armhf:latest
+lsiobase/alpine.nginx:latest
+lsiobase/alpine.nginx.armhf:latest
