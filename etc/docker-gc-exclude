@@ -9,3 +9,4 @@ lsiobase/alpine.python:latest
 lsiobase/alpine.python.armhf:latest
 lsiobase/alpine.nginx:latest
 lsiobase/alpine.nginx.armhf:latest
+lsiobase/alpine.arm64:latest
