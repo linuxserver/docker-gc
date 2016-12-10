@@ -7,6 +7,7 @@ lsiobase/xenial:latest
 lsiobase/xenial.armhf:latest
 lsiobase/alpine.python:latest
 lsiobase/alpine.python.armhf:latest
+lsiobase/alpine.python.arm64:latest
 lsiobase/alpine.nginx:latest
 lsiobase/alpine.nginx.armhf:latest
 lsiobase/alpine.arm64:latest
