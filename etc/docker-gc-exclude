@@ -5,6 +5,7 @@ lsiobase/alpine:latest
 lsiobase/alpine.armhf:latest
 lsiobase/xenial:latest
 lsiobase/xenial.armhf:latest
+lsiobase/xenial.arm64:latest
 lsiobase/alpine.python:latest
 lsiobase/alpine.python.armhf:latest
 lsiobase/alpine.python.arm64:latest
