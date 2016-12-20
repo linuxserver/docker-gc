@@ -2,6 +2,9 @@
 
 set -ex
 
+# clean any prexisting variable values
+unset BASE_ARCH GC_ARCH
+
 # set arch for base image pulls
 if [[ "${NODE_LABELS}"  == *"ARMHF"* ]]; then
 BASE_ARCH="armhf"
