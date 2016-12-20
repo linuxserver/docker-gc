@@ -5,10 +5,10 @@ set -ex
 # set docker architecture based on NODE_LABELS variable from job
 if [[ "${NODE_LABELS}"  == *"ARMHF"* ]]; then
 GC_ARCH="-armhf"
-PULL_ARCH="-armhf"
+PULL_ARCH=".armhf"
 elif [[ "${NODE_LABELS}"  == *"ARM64"* ]]; then
 GC_ARCH="-armhf"
-PULL_ARCH="-arm64"
+PULL_ARCH=".arm64"
 else
 GC_ARCH=""
 PULL_ARCH=""
