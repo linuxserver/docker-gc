@@ -3,42 +3,49 @@
 set -ex
 
 # clean any prexisting variable values
-unset BASE_ARCH GC_ARCH
+unset BASEIMAGE_ARCH CLEANUP_ARCH SHELLCHECK_ARCH
 
-# set arch for base image pulls and docker-gc
+# set arch for baseimage
 if [[ "${NODE_LABELS}"  == *"ARMHF"* ]]; then
-BASE_ARCH="armhf"
+BASEIMAGE_ARCH="armhf"
 elif [[ "${NODE_LABELS}"  == *"ARM64"* ]]; then
-BASE_ARCH="arm64"
+BASEIMAGE_ARCH="arm64"
 else
-BASE_ARCH=""
+BASEIMAGE_ARCH=""
 fi
 
-if [[ "${BASE_ARCH}" == "" ]]; then
-GC_ARCH=""
+# set arch for cleanup and shellcheck
+if [[ "${NODE_LABELS}" == *"ARM"* ]]; then
+CLEANUP_ARCH="-${BASEIMAGE_ARCH}"
+SHELLCHECK_ARCH="-armhf"
 else
-GC_ARCH="-${BASE_ARCH}"
+CLEANUP_ARCH=""
+SHELLCHECK_ARCH=""
 fi
 
 # pull docker images reading from docker-gc excludes file, ignoring readme-sync and shellcheck
-while read -r excludes
+while read -r excludes_file
 do
-	if [[ -z "${excludes}" || "${excludes}" == *"readme-sync"* \
-	|| "${excludes}" == *"shellcheck"* ]]; then
+	if [[ -z "${excludes_file}" || "${excludes_file}" == *"readme-sync"* \
+	|| "${excludes_file}" == *"shellcheck"* ]]; then
 		:
-	elif [[ "${excludes}" == *"$BASE_ARCH"* && "$BASE_ARCH" == "arm64" ]]; then
-		docker pull "${excludes}"
-	elif [[ "${excludes}" == *"$BASE_ARCH"* && "$BASE_ARCH" == "armhf" ]]; then
-		docker pull "${excludes}"
-	elif [[ "${excludes}" != *"armhf"* && "${excludes}" != *"arm64"* && "$BASE_ARCH" == "" ]]; then
-		docker pull "${excludes}"
+
+	elif [[ "${excludes_file}" == *"$BASEIMAGE_ARCH"* && "$BASEIMAGE_ARCH" == "arm64" ]]; then
+		docker pull "${excludes_file}"
+
+	elif [[ "${excludes_file}" == *"$BASEIMAGE_ARCH"* && "$BASEIMAGE_ARCH" == "armhf" ]]; then
+		docker pull "${excludes_file}"
+
+	elif [[ "${excludes_file}" != *"armhf"* && "${excludes_file}" != *"arm64"* && \
+	"$BASEIMAGE_ARCH" == "" ]]; then
+		docker pull "${excludes_file}"
 fi
 done < "${WORKSPACE}"/etc/docker-gc-exclude
 
 # pull shellcheck image
-docker pull lsiodev/shellcheck"${GC_ARCH}"
+docker pull lsiodev/shellcheck"${SHELLCHECK_ARCH}"
 
 # run docker gc
 docker run --rm \
 	-v /var/run/docker.sock:/var/run/docker.sock \
-	-v "${WORKSPACE}"/etc:/etc lsiodev/docker-gc"${GC_ARCH}" || true
+	-v "${WORKSPACE}"/etc:/etc lsiodev/docker-gc"${CLEANUP_ARCH}" || true
