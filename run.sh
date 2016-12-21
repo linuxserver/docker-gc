@@ -17,10 +17,11 @@ BASE_ARCH=""
 GC_ARCH=""
 fi
 
-# pull docker images reading from docker-gc excludes file, ignoring readme-sync
+# pull docker images reading from docker-gc excludes file, ignoring readme-sync, docker-gc and shellcheck
 while read -r excludes
 do
-	if [[ -z "${excludes}" || "${excludes}" == *"readme-sync"* ]]; then
+	if [[ -z "${excludes}" || "${excludes}" == *"readme-sync"* \
+	|| "${excludes}" == *"shellcheck"* || "${excludes}" == *"docker-gc"* ]]; then
 		:
 	elif [[ "${excludes}" == *"$BASE_ARCH"* && "$BASE_ARCH" == "arm64" ]]; then
 		docker pull "${excludes}"
@@ -30,6 +31,10 @@ do
 		docker pull "${excludes}"
 fi
 done < "${WORKSPACE}"/etc/docker-gc-exclude
+
+# pull docker-gc and shellcheck images
+docker pull lsiodev/docker-gc"${GC_ARCH}"
+docker pull lsiodev/shellcheck"${GC_ARCH}"
 
 # run docker gc
 docker run --rm \
