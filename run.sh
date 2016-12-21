@@ -5,19 +5,22 @@ set -ex
 # clean any prexisting variable values
 unset BASE_ARCH GC_ARCH
 
-# set arch for base image pulls
+# set arch for base image pulls and docker-gc
 if [[ "${NODE_LABELS}"  == *"ARMHF"* ]]; then
 BASE_ARCH="armhf"
+GC_ARCH="-armhf"
 elif [[ "${NODE_LABELS}"  == *"ARM64"* ]]; then
 BASE_ARCH="arm64"
+GC_ARCH="-armhf"
 else
 BASE_ARCH=""
+GC_ARCH=""
 fi
 
-# pull base images read from excludes file and based on node arch
+# pull docker images reading from docker-gc excludes file, ignoring readme-sync
 while read -r excludes
 do
-	if [[ -z "${excludes}" || "${excludes}" == *"readme-sync"* || "${excludes}" == *"shellcheck"* ]]; then
+	if [[ -z "${excludes}" || "${excludes}" == *"readme-sync"* ]]; then
 		:
 	elif [[ "${excludes}" == *"$BASE_ARCH"* && "$BASE_ARCH" == "arm64" ]]; then
 		docker pull "${excludes}"
@@ -27,14 +30,6 @@ do
 		docker pull "${excludes}"
 fi
 done < "${WORKSPACE}"/etc/docker-gc-exclude
-
-# set arch for docker-gc and shellcheck based on NODE_LABELS variable from job
-[[ "${NODE_LABELS}"  == *"ARM"* ]] && \
-	GC_ARCH="-armhf"
-
-# pull docker-gc and shellcheck
-docker pull lsiodev/docker-gc"${GC_ARCH}"
-docker pull lsiodev/shellcheck"${GC_ARCH}"
 
 # run docker gc
 docker run --rm \
