@@ -36,8 +36,8 @@ do
 	elif [[ "${excludes_file}" == *"$BASEIMAGE_ARCH"* && "$BASEIMAGE_ARCH" == "armhf" ]]; then
 		docker pull "${excludes_file}"
 
-	elif [[ "${excludes_file}" != *"armhf"* && "${excludes_file}" != *"arm64"* && \
-	"$BASEIMAGE_ARCH" == "" ]]; then
+	elif [[ "${excludes_file}" != *"armhf"* && "${excludes_file}" != *"arm64"* \
+	&& "$BASEIMAGE_ARCH" == "" ]]; then
 		docker pull "${excludes_file}"
 fi
 done < "${WORKSPACE}"/etc/docker-gc-exclude
