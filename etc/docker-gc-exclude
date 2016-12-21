@@ -1,3 +1,6 @@
+lsiodev/docker-gc:latest
+lsiodev/docker-gc-armhf:latest
+lsiodev/docker-gc-arm64:latest
 lsiodev/shellcheck-armhf:latest
 lsiodev/shellcheck:latest
 lsiodev/readme-sync:latest

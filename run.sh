@@ -8,20 +8,23 @@ unset BASE_ARCH GC_ARCH
 # set arch for base image pulls and docker-gc
 if [[ "${NODE_LABELS}"  == *"ARMHF"* ]]; then
 BASE_ARCH="armhf"
-GC_ARCH="-armhf"
 elif [[ "${NODE_LABELS}"  == *"ARM64"* ]]; then
 BASE_ARCH="arm64"
-GC_ARCH="-armhf"
 else
 BASE_ARCH=""
-GC_ARCH=""
 fi
 
-# pull docker images reading from docker-gc excludes file, ignoring readme-sync, docker-gc and shellcheck
+if [[ "${BASE_ARCH}" == "" ]]; then
+GC_ARCH=""
+else
+GC_ARCH="-${BASE_ARCH}"
+fi
+
+# pull docker images reading from docker-gc excludes file, ignoring readme-sync and shellcheck
 while read -r excludes
 do
 	if [[ -z "${excludes}" || "${excludes}" == *"readme-sync"* \
-	|| "${excludes}" == *"shellcheck"* || "${excludes}" == *"docker-gc"* ]]; then
+	|| "${excludes}" == *"shellcheck"* ]]; then
 		:
 	elif [[ "${excludes}" == *"$BASE_ARCH"* && "$BASE_ARCH" == "arm64" ]]; then
 		docker pull "${excludes}"
@@ -32,8 +35,7 @@ do
 fi
 done < "${WORKSPACE}"/etc/docker-gc-exclude
 
-# pull docker-gc and shellcheck images
-docker pull lsiodev/docker-gc"${GC_ARCH}"
+# pull shellcheck image
 docker pull lsiodev/shellcheck"${GC_ARCH}"
 
 # run docker gc
