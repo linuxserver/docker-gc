@@ -40,7 +40,7 @@ do
 	&& "$BASEIMAGE_ARCH" == "" ]]; then
 		docker pull "${excludes_file}"
 fi
-done < "${WORKSPACE}"/etc/docker-gc-exclude
+done < "${WORKSPACE}"/exclude_list
 
 # pull shellcheck image
 docker pull lsiodev/shellcheck"${SHELLCHECK_ARCH}"
@@ -48,4 +48,4 @@ docker pull lsiodev/shellcheck"${SHELLCHECK_ARCH}"
 # run docker gc
 docker run --rm \
 	-v /var/run/docker.sock:/var/run/docker.sock \
-	-v "${WORKSPACE}"/etc:/etc lsiodev/docker-gc"${CLEANUP_ARCH}" || true
+	-v "${WORKSPACE}"/exclude_list:/etc/docker-gc-exclude lsiodev/docker-gc"${CLEANUP_ARCH}" || true
