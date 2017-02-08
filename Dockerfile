@@ -11,7 +11,7 @@ RUN \
  apk add --no-cache \
 	bash && \
  apk add --no-cache \
-	--no-cache --repository http://nl.alpinelinux.org/alpine/edge/community \
+	--repository http://nl.alpinelinux.org/alpine/edge/community \
 	docker && \
 
 # install build packages
