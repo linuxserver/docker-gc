@@ -9,7 +9,9 @@ ENV FORCE_IMAGE_REMOVAL=1
 # install runtime packages
 RUN \
  apk add --no-cache \
-	bash \
+	bash && \
+ apk add --no-cache \
+	--no-cache --repository http://nl.alpinelinux.org/alpine/edge/community \
 	docker && \
 
 # install build packages
