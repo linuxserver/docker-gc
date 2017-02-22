@@ -1,16 +1,13 @@
 lsiobase/alpine:3.5
 lsiobase/alpine.arm64:latest
 lsiobase/alpine.armhf:3.5
-lsiobase/alpine.armhf:latest
 lsiobase/alpine:latest
 lsiobase/alpine.nginx:3.5
 lsiobase/alpine.nginx.arm64:latest
 lsiobase/alpine.nginx.armhf:3.5
-lsiobase/alpine.nginx.armhf:latest
 lsiobase/alpine.python:3.5
 lsiobase/alpine.python.arm64:latest
 lsiobase/alpine.python.armhf:3.5
-lsiobase/alpine.python.armhf:latest
 lsiobase/xenial.arm64:latest
 lsiobase/xenial.armhf:latest
 lsiobase/xenial:latest
