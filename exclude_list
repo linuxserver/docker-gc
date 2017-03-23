@@ -1,6 +1,7 @@
 lsiobase/alpine:3.5
 lsiobase/alpine.arm64:latest
 lsiobase/alpine.armhf:3.5
+lsiobase/alpine:edge
 lsiobase/alpine.nginx:3.5
 lsiobase/alpine.nginx.arm64:latest
 lsiobase/alpine.nginx.armhf:3.5
@@ -16,4 +17,5 @@ lsiodev/docker-gc:latest
 lsiodev/readme-sync:latest
 lsiodev/shellcheck-armhf:latest
 lsiodev/shellcheck:latest
+
 
