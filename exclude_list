@@ -10,6 +10,7 @@ lsiobase/alpine.python:3.5
 lsiobase/alpine.python.arm64:latest
 lsiobase/alpine.python.armhf:3.5
 lsiobase/mono
+lsiobase/mono.armhf
 lsiobase/xenial.arm64:latest
 lsiobase/xenial.armhf:latest
 lsiobase/xenial:latest
