@@ -1,5 +1,6 @@
 
 lsiobase/alpine:3.5
+lsiobase/alpine:3.6
 lsiobase/alpine.arm64:latest
 lsiobase/alpine.armhf:3.5
 lsiobase/alpine:edge
