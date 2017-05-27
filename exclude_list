@@ -1,6 +1,7 @@
 
 lsiobase/alpine:3.5
 lsiobase/alpine:3.6
+lsiobase/alpine.arm64:3.6
 lsiobase/alpine.arm64:latest
 lsiobase/alpine.armhf:3.5
 lsiobase/alpine.armhf:3.6
@@ -10,9 +11,9 @@ lsiobase/alpine.nginx.armhf:3.5
 lsiobase/alpine.python:3.6
 lsiobase/alpine.python.arm64:latest
 lsiobase/alpine.python.armhf:3.5
-lsiobase/mono:latest
 lsiobase/mono.arm64:latest
 lsiobase/mono.armhf:latest
+lsiobase/mono:latest
 lsiobase/xenial.arm64:latest
 lsiobase/xenial.armhf:latest
 lsiobase/xenial:latest
