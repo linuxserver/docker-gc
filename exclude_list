@@ -1,9 +1,6 @@
 
-lsiobase/alpine:3.5
 lsiobase/alpine:3.6
-lsiobase/alpine.arm64:3.5
 lsiobase/alpine.arm64:3.6
-lsiobase/alpine.armhf:3.5
 lsiobase/alpine.armhf:3.6
 lsiobase/alpine.nginx:3.6
 lsiobase/alpine.nginx.arm64:3.6
