@@ -1,4 +1,3 @@
-
 lsiobase/alpine:3.6
 lsiobase/alpine.arm64:3.6
 lsiobase/alpine.armhf:3.6
@@ -20,3 +19,7 @@ lsiodev/docker-gc:latest
 lsiodev/readme-sync:latest
 lsiodev/shellcheck-armhf:latest
 lsiodev/shellcheck:latest
+lsiodev/toolchain-arm64:latest
+lsiodev/toolchain-armhf:latest
+lsiodev/toolchain:latest
+
