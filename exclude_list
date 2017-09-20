@@ -7,7 +7,9 @@ lsiobase/alpine.nginx.arm64:3.6
 lsiobase/alpine.nginx.armhf:3.6
 lsiobase/alpine.python3:3.6
 lsiobase/alpine.python:3.6
+lsiobase/alpine.python3.arm64:3.6
 lsiobase/alpine.python.arm64:3.6
+lsiobase/alpine.python3.armhf:3.6
 lsiobase/alpine.python.armhf:3.6
 lsiobase/mono.arm64:latest
 lsiobase/mono.armhf:latest
@@ -21,6 +23,3 @@ lsiodev/docker-gc:latest
 lsiodev/readme-sync:latest
 lsiodev/shellcheck-armhf:latest
 lsiodev/shellcheck:latest
-lsiodev/toolchain-arm64:latest
-lsiodev/toolchain-armhf:latest
-lsiodev/toolchain:latest
