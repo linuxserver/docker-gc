@@ -1,9 +1,11 @@
+
 lsiobase/alpine:3.6
 lsiobase/alpine.arm64:3.6
 lsiobase/alpine.armhf:3.6
 lsiobase/alpine.nginx:3.6
 lsiobase/alpine.nginx.arm64:3.6
 lsiobase/alpine.nginx.armhf:3.6
+lsiobase/alpine.python3:3.6
 lsiobase/alpine.python:3.6
 lsiobase/alpine.python.arm64:3.6
 lsiobase/alpine.python.armhf:3.6
@@ -22,4 +24,3 @@ lsiodev/shellcheck:latest
 lsiodev/toolchain-arm64:latest
 lsiodev/toolchain-armhf:latest
 lsiodev/toolchain:latest
-
