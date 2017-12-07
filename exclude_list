@@ -9,6 +9,7 @@ lsiobase/alpine.nginx:3.6
 lsiobase/alpine.nginx.arm64:3.6
 lsiobase/alpine.nginx.armhf:3.6
 lsiobase/alpine.python3:3.6
+lsiobase/alpine.python3:3.7
 lsiobase/alpine.python:3.6
 lsiobase/alpine.python:3.7
 lsiobase/alpine.python3.arm64:3.6

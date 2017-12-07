@@ -1,38 +1,34 @@
 FROM scratch
 ADD rootfs.tar.xz /
-MAINTAINER sparklyballs
 
 # environment variables
 ENV FORCE_CONTAINER_REMOVAL=1
 ENV FORCE_IMAGE_REMOVAL=1
 
-# install runtime packages
+
 RUN \
+ echo "**** install build packages ****" && \
+ apk add --no-cache --virtual=build-dependencies \
+	git && \
+ echo"**** install runtime packages ****" && \
  apk add --no-cache \
 	bash \
 	docker && \
-
-# install build packages
- apk add --no-cache --virtual=build-dependencies \
-	git && \
-
-# fetch docker-gc repo to get latest ver of script
+ echo "**** fetch latest ver of docker-gc script ****" && \
  git clone https://github.com/spotify/docker-gc /tmp/docker-gc && \
-
-# link docker executable, copy and make docker-gc executable
+ echo "**** link docker executable, copy and make docker-gc executable ****" && \
  ln -s /usr/bin/docker \
 	/bin/docker && \
  cp /tmp/docker-gc/docker-gc /docker-gc && \
  chmod +x \
 	/docker-gc && \
-
-# cleanup
+ echo "**** cleanup ****" && \
  apk del --purge \
 	build-dependencies && \
  rm -rf \
 	/tmp/*
 
-# port and volumes
+# volumes
 VOLUME /var/lib/docker-gc
 
 # run command
