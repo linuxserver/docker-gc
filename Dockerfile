@@ -2,15 +2,15 @@ FROM scratch
 ADD rootfs.tar.xz /
 
 # environment variables
-ENV FORCE_CONTAINER_REMOVAL=1
-ENV FORCE_IMAGE_REMOVAL=1
+ENV FORCE_CONTAINER_REMOVAL=1 \
+FORCE_IMAGE_REMOVAL=1
 
 
 RUN \
  echo "**** install build packages ****" && \
  apk add --no-cache --virtual=build-dependencies \
 	git && \
- echo"**** install runtime packages ****" && \
+ echo "**** install runtime packages ****" && \
  apk add --no-cache \
 	bash \
 	docker && \
