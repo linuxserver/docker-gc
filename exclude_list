@@ -11,8 +11,8 @@ lsiobase/alpine.nginx.armhf:3.6
 lsiobase/alpine.python3:3.7
 lsiobase/alpine.python:3.6
 lsiobase/alpine.python:3.7
-lsiobase/alpine.python3.arm64:3.6
-lsiobase/alpine.python3.armhf:3.6
+lsiobase/alpine.python3.arm64:3.7
+lsiobase/alpine.python3.armhf:3.7
 lsiobase/alpine.python.arm64:3.6
 lsiobase/alpine.python.armhf:3.6
 lsiobase/mono.arm64:latest
