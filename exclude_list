@@ -1,5 +1,4 @@
 
-lsiobase/alpine:3.6
 lsiobase/alpine:3.7
 lsiobase/alpine.arm64:3.7
 lsiobase/alpine.armhf:3.7
