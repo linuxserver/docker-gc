@@ -10,6 +10,9 @@ lsiobase/alpine.python3.arm64:3.7
 lsiobase/alpine.python3.armhf:3.7
 lsiobase/alpine.python.arm64:3.7
 lsiobase/alpine.python.armhf:3.7
+lsiobase/bionic.arm64:latest
+lsiobase/bionic.armhf:latest
+lsiobase/bionic:latest
 lsiobase/mono.arm64:latest
 lsiobase/mono.armhf:latest
 lsiobase/mono:latest
