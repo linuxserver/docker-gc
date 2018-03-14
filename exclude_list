@@ -10,13 +10,11 @@ lsiobase/alpine.python3.arm64:3.7
 lsiobase/alpine.python3.armhf:3.7
 lsiobase/alpine.python.arm64:3.7
 lsiobase/alpine.python.armhf:3.7
-lsiobase/mono.arm64:latest
-lsiobase/mono.armhf:latest
-lsiobase/mono:latest
+lsiobase/mono:xenial
+lsiobase/ubuntu:bionic
+lsiobase/ubuntu:xenial
 lsiodev/docker-gc-arm64:latest
 lsiodev/docker-gc-armhf:latest
 lsiodev/docker-gc:latest
 lsiodev/shellcheck-armhf:latest
 lsiodev/shellcheck:latest
-lsiobase/ubuntu:xenial
-lsiobase/ubuntu:bionic
