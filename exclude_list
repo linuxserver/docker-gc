@@ -1,3 +1,7 @@
+lsiobase/mono.armhf:xenial
+lsiobase/mono.arm64:xenial
+lsiobase/ubuntu.armhf:xenial
+lsiobase/ubuntu.arm64:xenial
 lsiobase/alpine:3.7
 lsiobase/alpine.arm64:3.7
 lsiobase/alpine.armhf:3.7
