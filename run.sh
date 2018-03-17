@@ -6,12 +6,12 @@ set -ex
 unset BASEIMAGE_ARCH CLEANUP_ARCH SHELLCHECK_ARCH
 
 # set arch for baseimage
-if [[ "${NODE_LABELS}"  == *"ARMHF"* ]]; then
-BASEIMAGE_ARCH="armhf"
+if [[ "${NODE_LABELS}"  == *"README"* ]]; then
+BASEIMAGE_ARCH="readme"
 elif [[ "${NODE_LABELS}"  == *"ARM64"* ]]; then
 BASEIMAGE_ARCH="arm64"
-elif [[ "${NODE_LABELS}"  == *"README"* ]]; then
-BASEIMAGE_ARCH="readme"
+elif [[ "${NODE_LABELS}"  == *"ARMHF"* ]]; then
+BASEIMAGE_ARCH="armhf"
 elif [[ "${NODE_LABELS}"  == *"X86"* ]]; then
 BASEIMAGE_ARCH="x86-64"
 fi
