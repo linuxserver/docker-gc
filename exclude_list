@@ -20,5 +20,6 @@ lsiobase/ubuntu:xenial
 lsiodev/docker-gc-arm64:latest
 lsiodev/docker-gc-armhf:latest
 lsiodev/docker-gc:latest
+lsiodev/readme-sync-armhf:latest
 lsiodev/shellcheck-armhf:latest
 lsiodev/shellcheck:latest
