@@ -10,8 +10,10 @@ if [[ "${NODE_LABELS}"  == *"ARMHF"* ]]; then
 BASEIMAGE_ARCH="armhf"
 elif [[ "${NODE_LABELS}"  == *"ARM64"* ]]; then
 BASEIMAGE_ARCH="arm64"
-else
-BASEIMAGE_ARCH=""
+elif [[ "${NODE_LABELS}"  == *"README"* ]]; then
+BASEIMAGE_ARCH="readme"
+elif [[ "${NODE_LABELS}"  == *"X86"* ]]; then
+BASEIMAGE_ARCH="x86-64"
 fi
 
 # set arch for cleanup and shellcheck
@@ -37,13 +39,17 @@ do
 		docker pull "${excludes_file}"
 
 	elif [[ "${excludes_file}" != *"armhf"* && "${excludes_file}" != *"arm64"* \
-	&& "$BASEIMAGE_ARCH" == "" ]]; then
+	&& "$BASEIMAGE_ARCH" == "x86-64" ]]; then
 		docker pull "${excludes_file}"
 fi
 done < "${WORKSPACE}"/exclude_list
 
 # pull shellcheck image
+if [[ "$BASEIMAGE_ARCH" == "readme" ]]; then \
+docker pull lsiodev/readme-sync-armhf
+else
 docker pull lsiodev/shellcheck"${SHELLCHECK_ARCH}"
+fi
 
 # run docker gc
 docker run --rm \
