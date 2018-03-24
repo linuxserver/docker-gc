@@ -54,6 +54,9 @@ else
 docker pull lsiodev/shellcheck"${SHELLCHECK_ARCH}"
 fi
 
+# pull cleanup image
+docker pull lsiodev/docker-gc"${CLEANUP_ARCH}"
+
 # run docker gc
 docker run --rm \
 	-v /var/run/docker.sock:/var/run/docker.sock \
