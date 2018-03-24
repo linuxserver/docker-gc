@@ -47,7 +47,7 @@ do
 fi
 done < "${WORKSPACE}"/exclude_list
 
-# pull shellcheck image
+# pull shellcheck image or readme-sync image dependant on node
 if [[ "${README_SYNC}" == "true" ]]; then \
 docker pull lsiodev/readme-sync"${README_SYNC_ARCH}"
 else
