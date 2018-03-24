@@ -10,7 +10,7 @@ if [[ "${NODE_LABELS}"  == *"README"* ]]; then
 	README_SYNC="true"
 fi
 
-# set arch for shellcheck readme-sync and cleanup based on node lables
+# set arch for shellcheck readme-sync and cleanup based on node labels
 if [[ "${NODE_LABELS}"  == *"X86"* ]]; then
 	BASEIMAGE_ARCH="x86-64"
 	README_SYNC_ARCH=""
