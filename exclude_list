@@ -1,7 +1,10 @@
 lsiobase/alpine:3.7
+lsiobase/alpine:3.8
 lsiobase/alpine.arm64:3.7
+lsiobase/alpine.arm64:3.8
 lsiobase/alpine.arm64:edge
 lsiobase/alpine.armhf:3.7
+lsiobase/alpine.armhf:3.8
 lsiobase/alpine.armhf:edge
 lsiobase/alpine:edge
 lsiobase/alpine.nginx:3.7
@@ -16,7 +19,9 @@ lsiobase/alpine.python.armhf:3.7
 lsiobase/mono.arm64:xenial
 lsiobase/mono.armhf:xenial
 lsiobase/mono:xenial
+lsiobase/ubuntu.arm64:bionic
 lsiobase/ubuntu.arm64:xenial
+lsiobase/ubuntu.armhf:bionic
 lsiobase/ubuntu.armhf:xenial
 lsiobase/ubuntu:bionic
 lsiobase/ubuntu:xenial
