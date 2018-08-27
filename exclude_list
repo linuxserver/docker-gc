@@ -19,6 +19,9 @@ lsiobase/alpine.python3.arm64:3.8
 lsiobase/alpine.python3.armhf:3.8
 lsiobase/alpine.python.arm64:3.8
 lsiobase/alpine.python.armhf:3.8
+lsiobase/java.arm64:bionic
+lsiobase/java.armhf:bionic
+lsiobase/java:bionic
 lsiobase/mono.arm64:xenial
 lsiobase/mono.armhf:xenial
 lsiobase/mono:xenial
