@@ -37,11 +37,11 @@ do
 	elif [[ "${excludes_file}" == *"$BASEIMAGE_ARCH"* && "$BASEIMAGE_ARCH" == "arm64" ]]; then
 		docker pull "${excludes_file}"
 
-	elif [[ "${excludes_file}" == *"$BASEIMAGE_ARCH"* && "$BASEIMAGE_ARCH" == "armhf" \
+	elif [[ ("${excludes_file}" == *"$BASEIMAGE_ARCH"* || "${excludes_file}" == *"arm32"*) && "$BASEIMAGE_ARCH" == "armhf" \
 	&& "${NODE_LABELS}"  != *"README"* ]]; then
 		docker pull "${excludes_file}"
 
-	elif [[ "${excludes_file}" != *"armhf"* && "${excludes_file}" != *"arm64"* \
+	elif [[ "${excludes_file}" != *"armhf"* && "${excludes_file}" != *"arm32"* && "${excludes_file}" != *"arm64"* \
 	&& "$BASEIMAGE_ARCH" == "x86-64" ]]; then
 		docker pull "${excludes_file}"
 fi
